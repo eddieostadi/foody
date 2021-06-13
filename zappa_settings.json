@@ -5,10 +5,10 @@
         "profile_name": "default",
         "project_name": "foody",
         "runtime": "python3.8",
-        "s3_bucket": "foodyrmitstorage",
+        "s3_bucket": "myS3Storage",
         "vpc_config" : {
-             "SubnetIds": [ "subnet-b5468bfd","subnet-0ad0036c","subnet-bf7f3de7" ],
-             "SecurityGroupIds": [ "sg-d10cba9e" ]
+             "SubnetIds": [ "******","******","******" ],
+             "SecurityGroupIds": [ "******" ]
          }
     }
 }
