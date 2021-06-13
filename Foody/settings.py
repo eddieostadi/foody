@@ -81,8 +81,8 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'databasefoody',
             'USER': 'postgres',
-            'PASSWORD': 'RMITs3836877',
-            'HOST': 'databasefoody.c0htqdcgj0ky.ap-southeast-2.rds.amazonaws.com',
+            'PASSWORD': '***************',
+            'HOST': '*******.amazonaws.com',
             'PORT': '5432',
         }
     }
@@ -107,9 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -120,10 +117,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-AWS_STORAGE_BUCKET_NAME = "foodyrmitstorage"
+AWS_STORAGE_BUCKET_NAME = "myS3storage"
 AWS_S3_REGION_NAME = 'ap-southeast-2'
-AWS_ACCESS_KEY_ID = 'AKIAT2ZI6JZ2BHGUFZBC'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'MyAccessKey'
+AWS_SECRET_ACCESS_KEY = 'MySecretKey'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = None
 
@@ -131,23 +128,12 @@ STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = "custom_storages.StaticStorage"
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
-# AWS_STORAGE_BUCKET_NAME = 'amirjoon'
-# AWS_S3_REGION_NAME = 'ap-southeast-2'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = 'AKIAT2ZI6JZ2GLV3XRTE'
-# AWS_SECRET_ACCESS_KEY = 'c6JNjQDaYJDbnbQ6d5QpDyBO7z8b0ioNxb6wDNBW'
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-# AWS_DEFAULT_ACL = None
-# STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-# MEDIAFILES_LOCATION = 'media'
-# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 # serve the static files directly from the specified s3 bucket
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 MEDIA_ROOT = 'media'
 MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_ROOT}/"
 
