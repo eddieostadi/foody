@@ -7,8 +7,7 @@ from Foods.forms import LoginForm, Qform, NewUserForm
 from Foods.models import User, Food, SpecialDiet
 
 
-#317008179875395
-#endpoint database-1.c0htqdcgj0ky.ap-southeast-2.rds.amazonaws.com
+
 def home(request):
     note = " Please insert your Username/Password or register if you are a new user"
     if request.method == 'POST':
@@ -60,9 +59,7 @@ def mainpage(request, s_id):
             qresult= []
 
             criteria2 = query.cleaned_data["diet"] if len(query.cleaned_data["diet"] )!= 0 else " "
-            #Food.objects.filter(title__contains= criteria1, fat = None).delete()
-            #Food.objects.filter(diet__in=criteria2, title=None).delete()
-            #Food.objects.filter(title=None).delete()
+
             d= SpecialDiet.objects.filter(diet__in=criteria2)
             qresult2 = Food.objects.filter(diet__in= d)
 
