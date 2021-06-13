@@ -1,0 +1,60 @@
+
+
+
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Foody</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container" style="background-color:LightGray;">
+          <img src="{% static 'foody.png' %}" height="300" width="1300"/>
+             <h1>Welcome to Foody</h1><br>
+    <h2 class="h3 mb-3 fw-normal">You can login with your Foody credentials or through your Facebook account</h2><br><br>
+
+         <h3>{{note}}</h3><br><br><br>
+    {% if form.errors %}
+         <p>Invalid username or password. Please try again.</p>
+    {% endif %}
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        {{ userid }}
+        <br><br>
+        <input type="submit" value="Login" name="Login"><br><br>
+    </form>
+         <p>
+            <a href="{% url 'registration' %}" class="btn btn-primary my-2">Register Here</a>
+          </p><br><br>
+
+        </div>
+      </section>
+
+
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/bootstrap.js' %}" ></script>
+    <script src="{% static 'jquery-3.3.1.min.js' %}" ></script>
+
+  </body>
+</html>
+

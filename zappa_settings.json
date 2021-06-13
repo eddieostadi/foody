@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "aws_region": "ap-southeast-2",
+        "django_settings": "Foody.settings",
+        "profile_name": "default",
+        "project_name": "foody",
+        "runtime": "python3.8",
+        "s3_bucket": "foodyrmitstorage",
+        "vpc_config" : {
+             "SubnetIds": [ "subnet-b5468bfd","subnet-0ad0036c","subnet-bf7f3de7" ],
+             "SecurityGroupIds": [ "sg-d10cba9e" ]
+         }
+    }
+}
